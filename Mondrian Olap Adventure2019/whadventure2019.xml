@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Schema name="whadventureworks">
+<!--
+  == This software is subject to the terms of the Eclipse Public License v1.0
+  == Agreement, available at the following URL:
+  == http://www.eclipse.org/legal/epl-v10.html.
+  == You must accept the terms of that agreement to use this software.
+  ==
+  == Copyright (C) 2000-2005 Julian Hyde
+  == Copyright (C) 2005-2011 Pentaho and others
+  == All Rights Reserved.
+  -->
+
+<!-- Shared dimensions -->
+
+  
+
+<!-- Sales -->
+<Cube name="sales" defaultMeasure="Total">
+  <!-- Use annotations to provide translations of this cube's caption and
+       description into German and French. Use of annotations in this manner is
+       experimental and unsupported; just for testing right now. -->
+  
+  <Table name="fact_sales"/>
+ 
+  <Dimension name="dimensi_date" foreignKey="dateid">
+    <Hierarchy hasAll="true" allMemberName="All Times" primaryKey="dateid">
+      <Table name="dimensi_date" />
+      <Level name="Year" column="year" type="Numeric" uniqueMembers="true"
+          levelType="TimeYears"/>
+      <Level name="Month" column="month" uniqueMembers="false" type="String"
+          levelType="TimeMonths"/>
+      <Level name="Date" column="date" uniqueMembers="false" type="Numeric"
+          levelType="TimeDays"/>
+    </Hierarchy>
+   
+  </Dimension>
+
+  <Dimension name="dimensi_Product" foreignKey = "productid">
+    <Hierarchy hasAll="true" allMemberName="All Products" primaryKey ="productid">
+      <Table name="dimensi_Product" />
+      <Level name="product name" column="productname"/>
+      <Level name="product number" column="productnumber"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="dimensi_Customer" foreignKey="customerid">
+    <Hierarchy  hasAll="true" allMemberName="All Customers" primaryKey  = "customerid">
+        <Table name="dimensi_Customer"/>
+        <Level name="City" column="city"/>
+    </Hierarchy>
+  </Dimension>
+    
+    <Dimension name="dimensi_store" foreignKey="storeid">
+    <Hierarchy  hasAll="true" allMemberName="All stores" primaryKey  = "storeid">
+        <Table name="dimensi_store"/>
+        <Level name="name" column="name"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Measure name="Sales_Total" column="sales_total" aggregator="sum"
+      formatString="Standard"/>
+  <Measure name="Revenue" column="revenue" aggregator="sum"
+      formatString="Standard"/>
+  <Measure name="Profit" column="profit" aggregator="sum"
+      formatString="Standard"/>
+  
+ <!--  <Measure name="Sales Count" column="film_id" aggregator="count"
+      formatString="#,###"/>
+  <Measure name="Customer Count" column="customer_id"
+      aggregator="distinct-count" formatString="#,###"/> -->
+  
+  
+  
+</Cube>
+
+</Schema>
