@@ -28,4 +28,4 @@ Langkah-langkah yang dibutuhkan untuk menjalankan app dengan baik :
 # Screenshot 
 ## Dashboard Menu
 
-![Screenshot](ss/dashboard data warehouse.jpg)
+![Screenshot](ss/dashboard.jpg)
