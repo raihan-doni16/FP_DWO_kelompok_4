@@ -20,10 +20,10 @@ Langkah-langkah yang dibutuhkan untuk menjalankan app dengan baik :
 6. Start apache,mysql server, dan tomcat.
 7. Buka di browser ketik phpMyAdmin (http://localhost/phpmyadmin) enter.
 8. Buat database dengan nama `whadventure2019`.
-9. Import file `deweo.sql` ke dalam database `deweo`.
-10. Pindahkan file `jsp` dan `xml` (`sales_fact` , `purchase_fact`) yang ada pada folder mondrian pindahkan kedalam folder  -> `C:\xampp\tomcat\webapps\mondrian\WEB-INF\queries`.
+9. Import file `whadventure2019.sql` ke dalam database `whadventure2019`.
+10. Pindahkan file `jsp` dan `xml` (`whadventure2019` , `whadventure2019`) yang ada pada folder mondrian pindahkan kedalam folder  -> `C:\xampp\tomcat\webapps\mondrian\WEB-INF\queries`.
 11. Pindahkan file `testpage.jsp` dan `index` (`jsp` , `html`) yang ada pada folder mondrian pindahkan kedalam folder -> `C:\xampp\tomcat\webapps\mondrian`.
-12. Jalankan aplikasi dengan mengakses (http://localhost/FP_DWO_KELOMPOK_2/).
+12. Jalankan aplikasi dengan mengakses (http://localhost/FP_DWO_KELOMPOK_4/).
 
 # Screenshot 
 ## Dashboard Menu
